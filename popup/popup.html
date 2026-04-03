@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>VoucherHunt</h1>
+      <span class="tagline">Find discount codes automatically</span>
+    </div>
+
+    <div id="store-info" class="store-info">
+      <span class="dot detecting"></span>
+      <span id="store-name">Detecting store...</span>
+    </div>
+
+    <div id="not-shopify" class="message hidden">
+      <p>This doesn't appear to be a Shopify checkout page.</p>
+      <p class="hint">Navigate to a checkout page and try again.</p>
+    </div>
+
+    <div id="existing-discount" class="message info hidden">
+      <p>Discount <strong id="existing-code"></strong> is already applied.</p>
+      <p class="hint">Search for a better one?</p>
+    </div>
+
+    <div id="progress-section" class="hidden">
+      <div class="progress-header">
+        <span id="progress-phase"></span>
+        <span id="progress-count"></span>
+      </div>
+      <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <div id="progress-code" class="progress-code"></div>
+      <div id="progress-best" class="progress-best hidden">
+        Best so far: <strong id="best-code"></strong> saves <strong id="best-amount"></strong>
+      </div>
+    </div>
+
+    <div id="result-section" class="hidden">
+      <div id="result-success" class="result success hidden">
+        <div class="result-icon">&#x1F389;</div>
+        <div class="result-text">
+          Saved <strong id="result-amount"></strong> with <strong id="result-code"></strong>
+        </div>
+        <div id="result-detail" class="result-detail"></div>
+      </div>
+      <div id="result-none" class="result none hidden">
+        <div class="result-icon">&#x1F614;</div>
+        <div class="result-text">No working codes found</div>
+        <div class="result-detail" id="result-tried"></div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="start-btn" class="btn primary" disabled>Find Codes</button>
+      <button id="cancel-btn" class="btn secondary hidden">Stop</button>
+      <button id="continue-btn" class="btn secondary hidden">Keep Going (<span id="remaining-count"></span> more)</button>
+    </div>
+
+    <div id="sources-info" class="sources-info hidden">
+      <div class="sources-title">Sources checked:</div>
+      <div id="sources-list" class="sources-list"></div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
