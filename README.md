@@ -22,7 +22,7 @@ No accounts. No API keys. No nonsense.
 
 ---
 
-## How it works
+## How it Works
 
 **1. Scrape** / Pulls codes from Reddit threads and coupon aggregators for the store you're on
 
@@ -32,7 +32,7 @@ No accounts. No API keys. No nonsense.
 
 **4. Apply** / Enters each code, clicks the button, reads the result, moves on. Keeps the biggest discount it finds.
 
-## Get it
+## How to get it
 
 ```bash
 git clone https://github.com/TimEckert/SaveWithTimson.git
@@ -42,7 +42,7 @@ git clone https://github.com/TimEckert/SaveWithTimson.git
 2. Hit **Load unpacked** and pick the cloned folder
 3. Go to any Shopify checkout and click the extension
 
-## The good stuff
+## The Specs
 
 - Works on **any Shopify store**, in any language
 - **60 codes per batch**, hit "Keep Going" for more
@@ -51,7 +51,7 @@ git clone https://github.com/TimEckert/SaveWithTimson.git
 - Reconnects if you close and reopen the popup
 - **Zero API keys**. Reddit's public `.json` endpoint + good old HTML scraping
 
-## Under the hood
+## In the Back of the End
 
 ```
 manifest.json              Manifest V3
