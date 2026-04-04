@@ -161,7 +161,7 @@ function searchFinished() {
   isSearching = false;
   $('#cancel-btn').classList.add('hidden');
   $('#start-btn').classList.remove('hidden');
-  $('#start-btn').textContent = 'Start Over';
+  $('#start-btn').textContent = 'START OVER';
   $('#start-btn').disabled = false;
 }
 
