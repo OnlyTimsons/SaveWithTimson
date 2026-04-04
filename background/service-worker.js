@@ -44,11 +44,11 @@ async function gatherCodes(domain) {
 
   const [redditCodes, couponCodes, generated] = await Promise.all([
     searchReddit(storeName).catch(err => {
-      console.warn('[VoucherHunt] Reddit lookup failed:', err);
+      console.warn('[SaveWithTimson] Reddit lookup failed:', err);
       return [];
     }),
     searchCouponSites(domain).catch(err => {
-      console.warn('[VoucherHunt] Coupon site lookup failed:', err);
+      console.warn('[SaveWithTimson] Coupon site lookup failed:', err);
       return [];
     }),
     Promise.resolve(generateCodes(domain)),
@@ -158,6 +158,16 @@ async function findAndTryCodes(tabId, domain, isContinue = false) {
     current: 0,
   });
 
+  // Remove any pre-existing discount before starting (so we don't misattribute it)
+  if (!isContinue) {
+    try {
+      const state = await chrome.tabs.sendMessage(tabId, { action: 'getState' });
+      if (state.isApplied && state.appliedCode) {
+        await chrome.tabs.sendMessage(tabId, { action: 'removeCode', code: state.appliedCode });
+      }
+    } catch {}
+  }
+
   // Try codes sequentially
   for (let i = 0; i < batchTotal; i++) {
     if (mySearchId !== currentSearchId || searchState.cancelled) {
@@ -206,7 +216,7 @@ async function findAndTryCodes(tabId, domain, isContinue = false) {
       }
     } catch (err) {
       results.errors++;
-      console.warn(`[VoucherHunt] Error trying code ${code}:`, err);
+      console.warn(`[SaveWithTimson] Error trying code ${code}:`, err);
     }
 
     await new Promise(r => setTimeout(r, CODE_ATTEMPT_DELAY));
@@ -266,7 +276,7 @@ async function findAndTryCodes(tabId, domain, isContinue = false) {
 // --- Keep-alive ---
 // Chrome kills MV3 service workers after ~30s of "inactivity".
 // Use chrome.alarms to periodically wake the service worker during an active search.
-const KEEPALIVE_ALARM = 'voucherhunt-keepalive';
+const KEEPALIVE_ALARM = 'savwithtimson-keepalive';
 
 function startKeepAlive() {
   chrome.alarms.create(KEEPALIVE_ALARM, { periodInMinutes: 0.4 }); // every ~24 seconds

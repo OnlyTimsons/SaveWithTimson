@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "VoucherHunt",
-  "version": "1.7.0",
+  "name": "Save with Timson",
+  "version": "1.8.0",
   "description": "Automatically finds and tries discount codes on Shopify checkouts",
   "permissions": ["activeTab", "scripting", "storage", "alarms"],
   "host_permissions": [

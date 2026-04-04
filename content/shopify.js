@@ -255,6 +255,8 @@ async function applyCode(code) {
   }
 
   const totalBefore = getTotalPrice();
+  const wasAlreadyApplied = isCodeApplied();
+  const previousCode = getAppliedCodeName();
 
   // Set the code value
   input.focus();
@@ -281,15 +283,25 @@ async function applyCode(code) {
     await new Promise(r => setTimeout(r, 150));
 
     if (isCodeApplied()) {
-      const discount = getDiscountAmount();
-      const totalAfter = getTotalPrice();
-      return {
-        success: true,
-        code,
-        discount: discount || (totalBefore && totalAfter ? totalBefore - totalAfter : 0),
-        total: totalAfter,
-        totalBefore,
-      };
+      const appliedName = getAppliedCodeName();
+      // Verify this is OUR code, not a pre-existing discount
+      // Compare case-insensitively since Shopify may change casing
+      const isOurCode = appliedName && appliedName.toUpperCase() === code.toUpperCase();
+      const isNewDiscount = !wasAlreadyApplied || (appliedName !== previousCode);
+
+      if (isOurCode || isNewDiscount) {
+        const discount = getDiscountAmount();
+        const totalAfter = getTotalPrice();
+        return {
+          success: true,
+          code: appliedName || code,
+          discount: discount || (totalBefore && totalAfter ? totalBefore - totalAfter : 0),
+          total: totalAfter,
+          totalBefore,
+        };
+      }
+      // Discount exists but it's the same pre-existing one — not our code
+      break;
     }
 
     // If there's a clear error, no point waiting more
