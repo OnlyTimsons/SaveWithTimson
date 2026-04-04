@@ -83,7 +83,7 @@ function reconnectToSearch(state) {
 }
 
 function showReady(info) {
-  const dot = $('.store-info .dot');
+  const dot = $('.store-card .dot');
   dot.classList.remove('detecting');
   dot.classList.add('ready');
   $('#store-name').textContent = info.domain;
@@ -96,7 +96,7 @@ function showReady(info) {
 }
 
 function showNotShopify() {
-  const dot = $('.store-info .dot');
+  const dot = $('.store-card .dot');
   dot.classList.remove('detecting');
   dot.classList.add('error');
   $('#store-name').textContent = 'Not a Shopify checkout';

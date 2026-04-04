@@ -224,18 +224,18 @@ body {
   margin-top: 6px;
 }
 
-/* Wave pattern at bottom of success card */
+/* Wave pattern at bottom of success card — organic green wave like Bauhaus cards */
 .wave-bottom {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 30%;
-  background:
-    radial-gradient(ellipse at 30% 100%, var(--yellow) 0%, transparent 60%),
-    radial-gradient(ellipse at 70% 100%, var(--green) 0%, transparent 50%);
-  opacity: 0.25;
+  height: 40%;
   pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 120' preserveAspectRatio='none'%3E%3Cpath d='M0,40 C60,10 120,70 200,45 C280,20 340,60 400,35 L400,120 L0,120 Z' fill='%2300E676' opacity='0.35'/%3E%3Cpath d='M0,65 C80,40 150,85 250,60 C320,42 370,75 400,55 L400,120 L0,120 Z' fill='%2300E676' opacity='0.5'/%3E%3Cpath d='M0,85 C100,65 180,95 280,78 C350,66 380,88 400,75 L400,120 L0,120 Z' fill='%2300E676' opacity='0.7'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 /* --- Buttons --- */
