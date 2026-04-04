@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save with Timson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Space+Grotesk:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FFF9E6;
+      --peach: #FFE4C4;
+      --espresso: #3A2E2A;
+      --orange: #E85D3B;
+      --yellow: #FFC107;
+      --green: #00E676;
+      --outline: #BBAA9B;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--cream);
+      color: var(--espresso);
+      overflow-x: hidden;
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 60px;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-family: 'Shrikhand', cursive;
+      font-style: italic;
+      font-size: clamp(48px, 8vw, 80px);
+      color: var(--orange);
+      text-shadow: 4px 4px 0px var(--espresso);
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .hero .tagline {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--espresso);
+      max-width: 480px;
+      margin: 0 auto 40px;
+      line-height: 1.5;
+    }
+
+    .hero .cta {
+      display: inline-block;
+      padding: 16px 48px;
+      background: var(--orange);
+      color: var(--cream);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      border: 2px solid var(--espresso);
+      border-radius: 2rem;
+      box-shadow: 4px 4px 0px var(--espresso);
+      transition: all 0.15s;
+    }
+
+    .hero .cta:hover {
+      box-shadow: 8px 8px 0px var(--espresso);
+      transform: translateY(-4px);
+    }
+
+    .hero .cta:active {
+      box-shadow: 2px 2px 0px var(--espresso);
+      transform: translate(2px, 2px);
+    }
+
+    /* ---- SCREENSHOTS ---- */
+    .screenshots {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      padding: 0 24px 80px;
+      flex-wrap: wrap;
+    }
+
+    .screenshots img {
+      width: 260px;
+      border: 2px solid var(--espresso);
+      border-radius: 16px;
+      box-shadow: 6px 6px 0px var(--espresso);
+    }
+
+    /* ---- SECTIONS ---- */
+    section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    section h2 {
+      font-family: 'Shrikhand', cursive;
+      font-style: italic;
+      font-size: 36px;
+      color: var(--orange);
+      text-shadow: 3px 3px 0px var(--espresso);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .divider {
+      width: 100%;
+      height: 2px;
+      background: var(--espresso);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ---- USP CARDS ---- */
+    .usp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .usp-card {
+      background: var(--peach);
+      border: 2px solid var(--espresso);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 4px 4px 0px var(--espresso);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .usp-card .number {
+      font-family: 'Shrikhand', cursive;
+      font-size: 48px;
+      color: var(--espresso);
+      opacity: 0.1;
+      position: absolute;
+      bottom: -8px;
+      right: 12px;
+      line-height: 1;
+    }
+
+    .usp-card h3 {
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .usp-card p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--espresso);
+    }
+
+    /* ---- HOW IT WORKS ---- */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--cream);
+      border: 2px solid var(--espresso);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 4px 4px 0px var(--espresso);
+    }
+
+    .step-num {
+      font-family: 'Shrikhand', cursive;
+      font-size: 32px;
+      color: var(--orange);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .step-content h3 {
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    /* ---- FEATURES ---- */
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border: 1.5px solid var(--outline);
+      border-radius: 2rem;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .feature-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      border: 1.5px solid var(--espresso);
+      flex-shrink: 0;
+    }
+
+    /* ---- FAQ ---- */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: var(--peach);
+      border: 2px solid var(--espresso);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 3px 3px 0px var(--espresso);
+    }
+
+    .faq-item h3 {
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .faq-item p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    /* ---- FOOTER CTA ---- */
+    .footer-cta {
+      text-align: center;
+      padding: 80px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-cta h2 {
+      font-family: 'Shrikhand', cursive;
+      font-style: italic;
+      font-size: 40px;
+      color: var(--orange);
+      text-shadow: 3px 3px 0px var(--espresso);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .footer-cta .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cpath d='M0,25 C80,5 160,40 260,20 C330,8 370,30 400,18 L400,60 L0,60 Z' fill='%2300E676'/%3E%3C/svg%3E");
+      background-size: 100% 100%;
+    }
+
+    footer {
+      background: var(--green);
+      text-align: center;
+      padding: 16px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--espresso);
+    }
+
+    footer a {
+      color: var(--espresso);
+      text-decoration: underline;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 600px) {
+      .feature-list { grid-template-columns: 1fr; }
+      .screenshots { gap: 16px; }
+      .screenshots img { width: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>SAVE WITH<br>TIMSON</h1>
+    <p class="tagline">
+      A Chrome extension that finds working discount codes on Shopify checkouts. Automatically. For free.
+    </p>
+    <a href="https://github.com/TimEckert/SaveWithTimson" class="cta">GET IT ON GITHUB</a>
+  </div>
+
+  <!-- SCREENSHOTS -->
+  <div class="screenshots">
+    <img src="../screenshots/idle.png" alt="Ready state">
+    <img src="../screenshots/searching.png" alt="Searching for codes">
+    <img src="../screenshots/found.png" alt="Discount found">
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- WHY THIS -->
+  <section>
+    <h2>WHY THIS EXISTS</h2>
+    <div class="usp-grid">
+      <div class="usp-card">
+        <h3>No signup required</h3>
+        <p>No account, no email, no tracking. Install it, use it, done.</p>
+        <span class="number">01</span>
+      </div>
+      <div class="usp-card">
+        <h3>Actually finds codes</h3>
+        <p>Scrapes Reddit and coupon sites in real time. Not a stale database from 2019.</p>
+        <span class="number">02</span>
+      </div>
+      <div class="usp-card">
+        <h3>Works everywhere</h3>
+        <p>Any Shopify store. Any language. English, German, French, Spanish, and more.</p>
+        <span class="number">03</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <h2>HOW IT WORKS</h2>
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">1</span>
+        <div class="step-content">
+          <h3>Go to checkout</h3>
+          <p>Add something to your cart on any Shopify store and go to the checkout page.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div class="step-content">
+          <h3>Click the extension</h3>
+          <p>Hit "Find Codes". It scrapes Reddit, coupon sites, and generates smart guesses based on the store name and current season.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div class="step-content">
+          <h3>Sit back</h3>
+          <p>It tries every code automatically. One by one. Keeps the best discount it finds and applies it for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FEATURES -->
+  <section>
+    <h2>FEATURES</h2>
+    <div class="feature-list">
+      <div class="feature-item"><span class="feature-dot"></span> 60 codes per batch</div>
+      <div class="feature-item"><span class="feature-dot"></span> "Keep Going" for more</div>
+      <div class="feature-item"><span class="feature-dot"></span> Remembers per store</div>
+      <div class="feature-item"><span class="feature-dot"></span> Runs in background</div>
+      <div class="feature-item"><span class="feature-dot"></span> Multi-language support</div>
+      <div class="feature-item"><span class="feature-dot"></span> Zero API keys needed</div>
+      <div class="feature-item"><span class="feature-dot"></span> Reddit + coupon scraping</div>
+      <div class="feature-item"><span class="feature-dot"></span> Open source (MIT)</div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FAQ -->
+  <section>
+    <h2>FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>Does it work on every store?</h3>
+        <p>It works on any store running Shopify checkout. That's most independent e-commerce stores. It won't work on Amazon, eBay, or custom-built checkouts.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is it free?</h3>
+        <p>Yes. Completely free, open source, no ads, no tracking. Install from GitHub.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Will it get me banned?</h3>
+        <p>Shopify may show a "too many attempts" warning if you test a lot of codes quickly. It's cosmetic and clears after a few minutes. Your order is fine.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does it find codes?</h3>
+        <p>Three ways. It searches Reddit threads for people sharing codes, scrapes coupon aggregator sites, and generates likely codes based on the brand name and current holidays.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does it send my data anywhere?</h3>
+        <p>No. Everything runs locally in your browser. The only network requests go to Reddit and coupon sites to find codes. Nothing is sent to us because there is no "us".</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <div class="footer-cta">
+    <h2>STOP OVERPAYING</h2>
+    <a href="https://github.com/TimEckert/SaveWithTimson" class="cta">GET IT ON GITHUB</a>
+    <div class="wave"></div>
+  </div>
+
+  <footer>
+    Built by <a href="https://github.com/TimEckert">Tim Eckert</a> / MIT License
+  </footer>
+
+</body>
+</html>
