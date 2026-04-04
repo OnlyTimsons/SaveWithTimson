@@ -1,13 +1,11 @@
-# VoucherHunt
+# Save with Timson
 
 A Chrome extension that automatically finds and tries discount codes on Shopify checkouts.
 
 Navigate to any Shopify checkout, click the extension, and it searches Reddit, coupon sites, and common code patterns to find working discounts — no API keys needed.
 
 <p align="center">
-  <img src="screenshots/searching.png" width="420" alt="Searching for codes">
-  &nbsp;&nbsp;
-  <img src="screenshots/found.png" width="420" alt="Code found">
+  <img src="screenshots/preview.png" width="720" alt="Searching for codes and finding a discount">
 </p>
 
 ## How it works
