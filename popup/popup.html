@@ -2,26 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>Save with Timson</h1>
-      <span class="tagline">Find discount codes automatically</span>
+      <h1>SAVE WITH TIMSON</h1>
+      <span class="tagline">FIND DISCOUNT CODES AUTOMATICALLY</span>
     </div>
 
-    <div id="store-info" class="store-info">
+    <div id="store-info" class="store-card">
       <span class="dot detecting"></span>
       <span id="store-name">Detecting store...</span>
     </div>
 
-    <div id="not-shopify" class="message hidden">
-      <p>This doesn't appear to be a Shopify checkout page.</p>
+    <div id="not-shopify" class="message-card hidden">
+      <p>NOT A SHOPIFY CHECKOUT</p>
       <p class="hint">Navigate to a checkout page and try again.</p>
     </div>
 
-    <div id="existing-discount" class="message info hidden">
+    <div id="existing-discount" class="message-card info hidden">
       <p>Discount <strong id="existing-code"></strong> is already applied.</p>
       <p class="hint">Search for a better one?</p>
     </div>
@@ -41,28 +44,28 @@
     </div>
 
     <div id="result-section" class="hidden">
-      <div id="result-success" class="result success hidden">
-        <div class="result-icon">&#x1F389;</div>
+      <div id="result-success" class="result-card success hidden">
+        <div class="result-amount" id="result-amount"></div>
         <div class="result-text">
-          Saved <strong id="result-amount"></strong> with <strong id="result-code"></strong>
+          SAVED WITH <strong id="result-code"></strong>
         </div>
         <div id="result-detail" class="result-detail"></div>
+        <div class="wave-bottom"></div>
       </div>
-      <div id="result-none" class="result none hidden">
-        <div class="result-icon">&#x1F614;</div>
-        <div class="result-text">No working codes found</div>
+      <div id="result-none" class="result-card none hidden">
+        <div class="result-text">NO CODES FOUND</div>
         <div class="result-detail" id="result-tried"></div>
       </div>
     </div>
 
     <div class="actions">
-      <button id="start-btn" class="btn primary" disabled>Find Codes</button>
-      <button id="cancel-btn" class="btn secondary hidden">Stop</button>
-      <button id="continue-btn" class="btn secondary hidden">Keep Going (<span id="remaining-count"></span> more)</button>
+      <button id="start-btn" class="btn primary" disabled>FIND CODES</button>
+      <button id="cancel-btn" class="btn secondary hidden">STOP</button>
+      <button id="continue-btn" class="btn secondary hidden">KEEP GOING (<span id="remaining-count"></span> MORE)</button>
     </div>
 
     <div id="sources-info" class="sources-info hidden">
-      <div class="sources-title">Sources checked:</div>
+      <div class="sources-title">SOURCES CHECKED</div>
       <div id="sources-list" class="sources-list"></div>
     </div>
   </div>
