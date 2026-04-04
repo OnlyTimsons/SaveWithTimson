@@ -34,13 +34,12 @@ No accounts. No API keys. No nonsense.
 
 ## How to get it
 
-```bash
-git clone https://github.com/OnlyTimsons/SaveWithTimson.git
-```
+**[Download the latest release](https://github.com/OnlyTimsons/SaveWithTimson/releases/latest)** — unzip, load in Chrome, done.
 
-1. Open `chrome://extensions` and flip on **Developer mode**
-2. Hit **Load unpacked** and pick the cloned folder
-3. Go to any Shopify checkout and click the extension
+1. Download and unzip `SaveWithTimson-v*.zip`
+2. Open `chrome://extensions` and flip on **Developer mode**
+3. Hit **Load unpacked** and pick the unzipped folder
+4. Go to any Shopify checkout and click the extension
 
 ## The Specs
 
