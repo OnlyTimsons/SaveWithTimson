@@ -54,7 +54,7 @@
       line-height: 1.5;
     }
 
-    .hero .cta {
+    .cta {
       display: inline-block;
       padding: 16px 48px;
       background: var(--orange);
@@ -71,12 +71,12 @@
       transition: all 0.15s;
     }
 
-    .hero .cta:hover {
+    .cta:hover {
       box-shadow: 8px 8px 0px var(--espresso);
       transform: translateY(-4px);
     }
 
-    .hero .cta:active {
+    .cta:active {
       box-shadow: 2px 2px 0px var(--espresso);
       transform: translate(2px, 2px);
     }
@@ -85,6 +85,7 @@
     .screenshots {
       display: flex;
       justify-content: center;
+      align-items: flex-start;
       gap: 32px;
       padding: 0 24px 80px;
       flex-wrap: wrap;
@@ -92,6 +93,7 @@
 
     .screenshots img {
       width: 260px;
+      height: auto;
       border: 2px solid var(--espresso);
       border-radius: 16px;
       box-shadow: 6px 6px 0px var(--espresso);
@@ -121,6 +123,46 @@
       background: var(--espresso);
       max-width: 800px;
       margin: 0 auto;
+    }
+
+    /* ---- USP SECTION ---- */
+    .usp-section {
+      background: var(--orange);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .usp-section::before,
+    .usp-section::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .usp-section::before {
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.12);
+      bottom: -80px;
+      right: -60px;
+    }
+
+    .usp-section::after {
+      width: 200px;
+      height: 200px;
+      background: rgba(0, 0, 0, 0.08);
+      top: -40px;
+      left: 60px;
+    }
+
+    .usp-section h2 {
+      color: var(--cream);
+      text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    .usp-section section {
+      position: relative;
+      z-index: 1;
     }
 
     /* ---- USP CARDS ---- */
@@ -206,6 +248,46 @@
       line-height: 1.5;
     }
 
+    /* ---- FEATURES SECTION ---- */
+    .features-section {
+      background: var(--orange);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .features-section::before,
+    .features-section::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .features-section::before {
+      width: 350px;
+      height: 350px;
+      background: rgba(255, 255, 255, 0.12);
+      top: -100px;
+      right: 40px;
+    }
+
+    .features-section::after {
+      width: 250px;
+      height: 250px;
+      background: rgba(0, 0, 0, 0.08);
+      bottom: -60px;
+      left: -40px;
+    }
+
+    .features-section h2 {
+      color: var(--cream);
+      text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    .features-section section {
+      position: relative;
+      z-index: 1;
+    }
+
     /* ---- FEATURES ---- */
     .feature-list {
       display: grid;
@@ -218,10 +300,11 @@
       align-items: center;
       gap: 10px;
       padding: 12px 16px;
-      border: 1.5px solid var(--outline);
+      border: 2px solid var(--espresso);
       border-radius: 2rem;
       font-size: 13px;
       font-weight: 700;
+      background: var(--cream);
     }
 
     .feature-dot {
@@ -265,45 +348,25 @@
     /* ---- FOOTER CTA ---- */
     .footer-cta {
       text-align: center;
-      padding: 80px 24px;
+      padding: 120px 24px 60px;
       position: relative;
       overflow: hidden;
+      background: var(--green);
     }
 
-    .footer-cta h2 {
-      font-family: 'Shrikhand', cursive;
-      font-style: italic;
-      font-size: 40px;
-      color: var(--orange);
-      text-shadow: 3px 3px 0px var(--espresso);
-      text-transform: uppercase;
-      margin-bottom: 24px;
+    .footer-cta .cta {
+      position: relative;
+      z-index: 1;
     }
 
     .footer-cta .wave {
       position: absolute;
-      bottom: 0;
+      top: 0;
       left: 0;
       right: 0;
-      height: 80px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cpath d='M0,25 C80,5 160,40 260,20 C330,8 370,30 400,18 L400,60 L0,60 Z' fill='%2300E676'/%3E%3C/svg%3E");
+      height: 120px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 100' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L400,0 L400,35 C350,0 300,30 250,70 C200,100 150,40 100,80 C50,100 25,60 0,60 Z' fill='%23FFF9E6'/%3E%3C/svg%3E");
       background-size: 100% 100%;
-    }
-
-    footer {
-      background: var(--green);
-      text-align: center;
-      padding: 16px;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--espresso);
-    }
-
-    footer a {
-      color: var(--espresso);
-      text-decoration: underline;
     }
 
     /* ---- RESPONSIVE ---- */
@@ -322,7 +385,7 @@
     <p class="tagline">
       A Chrome extension that finds working discount codes on Shopify checkouts. Automatically. For free.
     </p>
-    <a href="https://github.com/TimEckert/SaveWithTimson" class="cta">GET IT ON GITHUB</a>
+    <a href="https://github.com/OnlyTimsons/SaveWithTimson/releases/latest" class="cta">DOWNLOAD</a>
   </div>
 
   <!-- SCREENSHOTS -->
@@ -332,31 +395,29 @@
     <img src="../screenshots/found.png" alt="Discount found">
   </div>
 
-  <div class="divider"></div>
-
   <!-- WHY THIS -->
-  <section>
-    <h2>WHY THIS EXISTS</h2>
-    <div class="usp-grid">
-      <div class="usp-card">
-        <h3>No signup required</h3>
-        <p>No account, no email, no tracking. Install it, use it, done.</p>
-        <span class="number">01</span>
+  <div class="usp-section">
+    <section>
+      <h2>WHY THIS EXISTS</h2>
+      <div class="usp-grid">
+        <div class="usp-card">
+          <h3>No signup required</h3>
+          <p>No account, no email, no tracking. Install it, use it, done.</p>
+          <span class="number">01</span>
+        </div>
+        <div class="usp-card">
+          <h3>Actually finds codes</h3>
+          <p>Scrapes Reddit and coupon sites in real time. Not a stale database from 2019.</p>
+          <span class="number">02</span>
+        </div>
+        <div class="usp-card">
+          <h3>Works everywhere</h3>
+          <p>Any Shopify store. Any language. English, German, French, Spanish, and more.</p>
+          <span class="number">03</span>
+        </div>
       </div>
-      <div class="usp-card">
-        <h3>Actually finds codes</h3>
-        <p>Scrapes Reddit and coupon sites in real time. Not a stale database from 2019.</p>
-        <span class="number">02</span>
-      </div>
-      <div class="usp-card">
-        <h3>Works everywhere</h3>
-        <p>Any Shopify store. Any language. English, German, French, Spanish, and more.</p>
-        <span class="number">03</span>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
+    </section>
+  </div>
 
   <!-- HOW IT WORKS -->
   <section>
@@ -386,24 +447,19 @@
     </div>
   </section>
 
-  <div class="divider"></div>
-
   <!-- FEATURES -->
-  <section>
-    <h2>FEATURES</h2>
-    <div class="feature-list">
-      <div class="feature-item"><span class="feature-dot"></span> 60 codes per batch</div>
-      <div class="feature-item"><span class="feature-dot"></span> "Keep Going" for more</div>
-      <div class="feature-item"><span class="feature-dot"></span> Remembers per store</div>
-      <div class="feature-item"><span class="feature-dot"></span> Runs in background</div>
-      <div class="feature-item"><span class="feature-dot"></span> Multi-language support</div>
-      <div class="feature-item"><span class="feature-dot"></span> Zero API keys needed</div>
-      <div class="feature-item"><span class="feature-dot"></span> Reddit + coupon scraping</div>
-      <div class="feature-item"><span class="feature-dot"></span> Open source (MIT)</div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
+  <div class="features-section">
+    <section>
+      <h2>FEATURES</h2>
+      <div class="feature-list">
+        <div class="feature-item"><span class="feature-dot"></span> 60+ codes per batch, keep going for more</div>
+        <div class="feature-item"><span class="feature-dot"></span> Remembers what worked per store</div>
+        <div class="feature-item"><span class="feature-dot"></span> Runs in background, any language</div>
+        <div class="feature-item"><span class="feature-dot"></span> Reddit + coupon site scraping</div>
+        <div class="feature-item"><span class="feature-dot"></span> Open source, zero API keys</div>
+      </div>
+    </section>
+  </div>
 
   <!-- FAQ -->
   <section>
@@ -434,14 +490,10 @@
 
   <!-- FOOTER CTA -->
   <div class="footer-cta">
-    <h2>STOP OVERPAYING</h2>
-    <a href="https://github.com/TimEckert/SaveWithTimson" class="cta">GET IT ON GITHUB</a>
+    <a href="https://github.com/OnlyTimsons/SaveWithTimson/releases/latest" class="cta">DOWNLOAD</a>
     <div class="wave"></div>
   </div>
 
-  <footer>
-    Built by <a href="https://github.com/TimEckert">Tim Eckert</a> / MIT License
-  </footer>
 
 </body>
 </html>

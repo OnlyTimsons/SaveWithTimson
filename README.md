@@ -35,7 +35,7 @@ No accounts. No API keys. No nonsense.
 ## How to get it
 
 ```bash
-git clone https://github.com/TimEckert/SaveWithTimson.git
+git clone https://github.com/OnlyTimsons/SaveWithTimson.git
 ```
 
 1. Open `chrome://extensions` and flip on **Developer mode**
