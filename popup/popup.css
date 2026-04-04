@@ -44,11 +44,14 @@ body {
 }
 
 .header h1 {
-  font-size: 20px;
-  font-weight: 900;
-  letter-spacing: -0.5px;
+  font-family: 'Shrikhand', cursive;
+  font-size: 22px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: var(--espresso);
+  color: var(--orange);
+  text-shadow: 2px 2px 0px var(--espresso);
 }
 
 .tagline {
@@ -170,10 +173,26 @@ body {
   font-size: 12px;
   font-weight: 700;
   box-shadow: 3px 3px 0px var(--espresso);
+  position: relative;
+  overflow: hidden;
 }
 
 .progress-best strong {
   color: var(--orange);
+}
+
+/* Small green wave accent in bottom-right of "best so far" card */
+.progress-best::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cpath d='M80,100 C100,60 140,80 200,50 L200,100 Z' fill='%2300E676' opacity='1'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 /* --- Results --- */
@@ -190,6 +209,7 @@ body {
 .result-card.success {
   background: var(--peach);
   box-shadow: var(--hard-shadow);
+  padding-bottom: 30px;
 }
 
 .result-card.none {
@@ -222,17 +242,19 @@ body {
   font-weight: 500;
   color: var(--outline);
   margin-top: 6px;
+  position: relative;
+  z-index: 1;
 }
 
-/* Wave pattern at bottom of success card — organic green wave like Bauhaus cards */
+/* Single organic green wave at very bottom of success card — below all text */
 .wave-bottom {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 40%;
+  height: 24%;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 120' preserveAspectRatio='none'%3E%3Cpath d='M0,40 C60,10 120,70 200,45 C280,20 340,60 400,35 L400,120 L0,120 Z' fill='%2300E676' opacity='0.35'/%3E%3Cpath d='M0,65 C80,40 150,85 250,60 C320,42 370,75 400,55 L400,120 L0,120 Z' fill='%2300E676' opacity='0.5'/%3E%3Cpath d='M0,85 C100,65 180,95 280,78 C350,66 380,88 400,75 L400,120 L0,120 Z' fill='%2300E676' opacity='0.7'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cpath d='M0,25 C80,5 160,40 260,20 C330,8 370,30 400,18 L400,60 L0,60 Z' fill='%2300E676' opacity='1'/%3E%3C/svg%3E");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: bottom;
