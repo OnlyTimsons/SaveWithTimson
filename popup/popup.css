@@ -1,19 +1,23 @@
 /* ===========================================
-   SUNSET BAUHAUS DESIGN SYSTEM
+   RETROTIMSON DESIGN SYSTEM
    Save with Timson — Chrome Extension
    =========================================== */
 
 :root {
-  --cream: #FFF9E6;
-  --peach: #FFE4C4;
-  --espresso: #3A2E2A;
-  --orange: #E85D3B;
-  --yellow: #FFC107;
-  --green: #00E676;
-  --outline: #BBAA9B;
-  --ink-border: 2px solid var(--espresso);
-  --hard-shadow: 4px 4px 0px var(--espresso);
-  --hard-shadow-hover: 8px 8px 0px var(--espresso);
+  --primary: #E35B37;
+  --primary-dark: #a83110;
+  --secondary: #F4B41A;
+  --secondary-light: #f5e6b8;
+  --tertiary: #00D180;
+  --tertiary-light: #d0f5e8;
+  --surface: #FBF2D5;
+  --surface-dim: #f0e4be;
+  --surface-card: #ffffff;
+  --on-surface: #332f1c;
+  --on-surface-muted: #6b6450;
+  --ink-border: 2px solid var(--on-surface);
+  --hard-shadow: 4px 4px 0px var(--on-surface);
+  --hard-shadow-hover: 6px 6px 0px var(--on-surface);
 }
 
 * {
@@ -24,9 +28,9 @@
 
 body {
   width: 360px;
-  font-family: 'Space Grotesk', -apple-system, sans-serif;
-  background: var(--cream);
-  color: var(--espresso);
+  font-family: 'Work Sans', -apple-system, sans-serif;
+  background: var(--surface);
+  color: var(--on-surface);
 }
 
 .container {
@@ -44,14 +48,16 @@ body {
 }
 
 .header h1 {
-  font-family: 'Shrikhand', cursive;
+  font-family: 'Epilogue', sans-serif;
   font-size: 22px;
-  font-weight: 400;
-  font-style: italic;
-  letter-spacing: 0.5px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
   text-transform: uppercase;
-  color: var(--orange);
-  text-shadow: 2px 2px 0px var(--espresso);
+  color: var(--on-surface);
+}
+
+.header h1 span {
+  color: var(--primary);
 }
 
 .tagline {
@@ -59,7 +65,7 @@ body {
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--outline);
+  color: var(--on-surface-muted);
 }
 
 /* --- Store Card --- */
@@ -68,7 +74,7 @@ body {
   align-items: center;
   gap: 10px;
   padding: 10px 14px;
-  background: var(--peach);
+  background: var(--surface-card);
   border: var(--ink-border);
   border-radius: 12px;
   box-shadow: var(--hard-shadow);
@@ -82,20 +88,20 @@ body {
   height: 10px;
   border-radius: 50%;
   flex-shrink: 0;
-  border: 1.5px solid var(--espresso);
+  border: 1.5px solid var(--on-surface);
 }
 
 .dot.detecting {
-  background: var(--yellow);
+  background: var(--secondary);
   animation: pulse 1.2s ease-in-out infinite;
 }
 
 .dot.ready {
-  background: var(--green);
+  background: var(--tertiary);
 }
 
 .dot.error {
-  background: var(--orange);
+  background: var(--primary);
 }
 
 @keyframes pulse {
@@ -111,16 +117,16 @@ body {
   font-size: 13px;
   font-weight: 500;
   margin-bottom: 14px;
-  background: var(--cream);
-  box-shadow: 3px 3px 0px var(--outline);
+  background: var(--surface-card);
+  box-shadow: 3px 3px 0px var(--on-surface);
 }
 
 .message-card.info {
-  border-left: 5px solid var(--orange);
+  border-left: 5px solid var(--primary);
 }
 
 .message-card .hint {
-  color: var(--outline);
+  color: var(--on-surface-muted);
   margin-top: 4px;
   font-size: 11px;
 }
@@ -133,17 +139,18 @@ body {
 .progress-header {
   display: flex;
   justify-content: space-between;
+  font-family: 'Epilogue', sans-serif;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 8px;
-  color: var(--espresso);
+  color: var(--on-surface);
 }
 
 .progress-bar {
   height: 10px;
-  background: var(--peach);
+  background: var(--surface-dim);
   border: var(--ink-border);
   border-radius: 6px;
   overflow: hidden;
@@ -152,7 +159,7 @@ body {
 
 .progress-fill {
   height: 100%;
-  background: var(--orange);
+  background: var(--primary);
   width: 0%;
   transition: width 0.3s ease;
 }
@@ -160,39 +167,37 @@ body {
 .progress-code {
   font-size: 12px;
   font-weight: 500;
-  color: var(--outline);
-  font-family: 'Space Grotesk', monospace;
+  color: var(--on-surface-muted);
 }
 
 .progress-best {
   margin-top: 10px;
   padding: 10px 12px;
-  background: var(--peach);
+  background: var(--surface-card);
   border: var(--ink-border);
   border-radius: 10px;
   font-size: 12px;
   font-weight: 700;
-  box-shadow: 3px 3px 0px var(--espresso);
+  box-shadow: 3px 3px 0px var(--on-surface);
   position: relative;
   overflow: hidden;
 }
 
 .progress-best strong {
-  color: var(--orange);
+  color: var(--primary);
 }
 
-/* Small green wave accent in bottom-right of "best so far" card */
+/* Geometric accent on "best so far" card */
 .progress-best::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 40%;
-  height: 100%;
+  bottom: -8px;
+  right: -8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--tertiary-light);
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cpath d='M80,100 C100,60 140,80 200,50 L200,100 Z' fill='%2300E676' opacity='1'/%3E%3C/svg%3E");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
 
 /* --- Results --- */
@@ -207,57 +212,57 @@ body {
 }
 
 .result-card.success {
-  background: var(--peach);
+  background: var(--surface-card);
   box-shadow: var(--hard-shadow);
   padding-bottom: 30px;
 }
 
 .result-card.none {
-  background: var(--cream);
-  box-shadow: 3px 3px 0px var(--outline);
+  background: var(--surface-card);
+  box-shadow: 3px 3px 0px var(--on-surface);
 }
 
 .result-amount {
+  font-family: 'Epilogue', sans-serif;
   font-size: 36px;
   font-weight: 900;
-  color: var(--orange);
+  color: var(--primary);
   letter-spacing: -1px;
   line-height: 1;
   margin-bottom: 4px;
 }
 
 .result-text {
+  font-family: 'Epilogue', sans-serif;
   font-size: 13px;
-  font-weight: 900;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .result-text strong {
-  color: var(--orange);
+  color: var(--primary);
 }
 
 .result-detail {
   font-size: 11px;
   font-weight: 500;
-  color: var(--outline);
+  color: var(--on-surface-muted);
   margin-top: 6px;
   position: relative;
   z-index: 1;
 }
 
-/* Single organic green wave at very bottom of success card — below all text */
+/* Geometric accent on success card */
 .wave-bottom {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 24%;
+  bottom: -10px;
+  right: -10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--tertiary-light);
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cpath d='M0,25 C80,5 160,40 260,20 C330,8 370,30 400,18 L400,60 L0,60 Z' fill='%2300E676' opacity='1'/%3E%3C/svg%3E");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: bottom;
 }
 
 /* --- Buttons --- */
@@ -270,10 +275,10 @@ body {
   flex: 1;
   padding: 12px;
   border: var(--ink-border);
-  border-radius: 2rem;
-  font-family: 'Space Grotesk', sans-serif;
+  border-radius: 100px;
+  font-family: 'Epilogue', sans-serif;
   font-size: 13px;
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   cursor: pointer;
@@ -282,50 +287,51 @@ body {
 }
 
 .btn:active {
-  box-shadow: 2px 2px 0px var(--espresso);
+  box-shadow: 2px 2px 0px var(--on-surface);
   transform: translate(2px, 2px);
 }
 
 .btn:disabled {
   opacity: 0.35;
   cursor: not-allowed;
-  box-shadow: 2px 2px 0px var(--outline);
+  box-shadow: 2px 2px 0px var(--on-surface-muted);
 }
 
 .btn.primary {
-  background: var(--orange);
-  color: var(--cream);
+  background: var(--primary);
+  color: #fff;
 }
 
 .btn.primary:hover:not(:disabled) {
+  background: var(--primary-dark);
   box-shadow: var(--hard-shadow-hover);
-  transform: translateY(-4px);
+  transform: translateY(-2px);
 }
 
 .btn.secondary {
-  background: var(--cream);
-  color: var(--espresso);
+  background: var(--surface);
+  color: var(--on-surface);
 }
 
 .btn.secondary:hover {
-  background: var(--peach);
+  background: var(--surface-dim);
   box-shadow: var(--hard-shadow-hover);
-  transform: translateY(-4px);
+  transform: translateY(-2px);
 }
 
 /* --- Sources --- */
 .sources-info {
   margin-top: 14px;
   padding-top: 10px;
-  border-top: var(--ink-border);
 }
 
 .sources-title {
+  font-family: 'Epilogue', sans-serif;
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--outline);
+  color: var(--on-surface-muted);
   margin-bottom: 6px;
 }
 
@@ -339,8 +345,8 @@ body {
   font-size: 10px;
   font-weight: 700;
   padding: 3px 8px;
-  background: var(--peach);
-  border: 1.5px solid var(--espresso);
-  border-radius: 2rem;
-  color: var(--espresso);
+  background: var(--secondary-light);
+  border: 1.5px solid var(--on-surface);
+  border-radius: 100px;
+  color: var(--on-surface);
 }
