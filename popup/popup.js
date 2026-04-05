@@ -84,8 +84,10 @@ function reconnectToSearch(state) {
 
 function showReady(info) {
   const dot = $('.store-card .dot');
-  dot.classList.remove('detecting');
-  dot.classList.add('ready');
+  if (dot) {
+    dot.classList.remove('detecting');
+    dot.classList.add('ready');
+  }
   $('#store-name').textContent = info.domain;
   $('#start-btn').disabled = false;
 
@@ -97,8 +99,10 @@ function showReady(info) {
 
 function showNotShopify() {
   const dot = $('.store-card .dot');
-  dot.classList.remove('detecting');
-  dot.classList.add('error');
+  if (dot) {
+    dot.classList.remove('detecting');
+    dot.classList.add('error');
+  }
   $('#store-name').textContent = 'Not a Shopify checkout';
   $('#not-shopify').classList.remove('hidden');
 }
