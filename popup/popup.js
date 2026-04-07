@@ -227,13 +227,17 @@ function applyProgressUpdate(msg) {
     if (msg.sources) {
       $('#sources-info').classList.remove('hidden');
       const list = $('#sources-list');
-      list.innerHTML = '';
-      if (msg.sources.reddit > 0)
-        list.innerHTML += `<span class="source-tag">Reddit: ${msg.sources.reddit}</span>`;
-      if (msg.sources.couponSites > 0)
-        list.innerHTML += `<span class="source-tag">Coupon sites: ${msg.sources.couponSites}</span>`;
-      list.innerHTML += `<span class="source-tag">Generated: ${msg.sources.generated}</span>`;
-      list.innerHTML += `<span class="source-tag">Common: ${msg.sources.common}</span>`;
+      list.textContent = '';
+      const addTag = (label, count) => {
+        const span = document.createElement('span');
+        span.className = 'source-tag';
+        span.textContent = `${label}: ${count}`;
+        list.appendChild(span);
+      };
+      if (msg.sources.reddit > 0) addTag('Reddit', msg.sources.reddit);
+      if (msg.sources.couponSites > 0) addTag('Coupon sites', msg.sources.couponSites);
+      addTag('Generated', msg.sources.generated);
+      addTag('Common', msg.sources.common);
     }
   }
 
@@ -265,7 +269,8 @@ function applyProgressUpdate(msg) {
   }
 }
 
-chrome.runtime.onMessage.addListener((msg) => {
+chrome.runtime.onMessage.addListener((msg, sender) => {
+  if (sender.id !== chrome.runtime.id) return;
   if (msg.action !== 'progress') return;
   applyProgressUpdate(msg);
 });

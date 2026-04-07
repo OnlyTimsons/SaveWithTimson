@@ -297,6 +297,8 @@ chrome.alarms.onAlarm.addListener((alarm) => {
 
 // Listen for messages from popup
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  if (sender.id !== chrome.runtime.id) return;
+
   if (msg.action === 'startSearch') {
     findAndTryCodes(msg.tabId, msg.domain, false).then(sendResponse);
     return true;

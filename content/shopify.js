@@ -328,6 +328,8 @@ async function removeCurrentCode(code) {
 // --- MESSAGE HANDLER ---
 
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  if (sender.id !== chrome.runtime.id) return;
+
   if (msg.action === 'detectShopify') {
     const input = getDiscountInput();
     sendResponse({
